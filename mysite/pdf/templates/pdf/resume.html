@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <title>Resume</title>
+    <style>
+        .resume-section {
+            margin-bottom: 2rem;
+        }
+        .section-title {
+            border-bottom: 2px solid #007bff;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="resume-section">
+            <h1 class="text-center mb-4">{{ profile_user.name }}</h1>
+            <p class="text-center">
+                Email: {{ profile_user.email }} | Phone: {{ profile_user.phone }}
+            </p>
+        </div>
+
+        <div class="resume-section">
+            <h3 class="section-title">Professional Summary</h3>
+            <p>{{ profile_user.summary }}</p>
+        </div>
+
+        <div class="resume-section">
+            <h3 class="section-title">Education</h3>
+            <ul class="list-unstyled">
+                <li><strong>Degree:</strong> {{ profile_user.degree }}</li>
+                <li><strong>University:</strong> {{ profile_user.university }}</li>
+                <li><strong>School:</strong> {{ profile_user.school }}</li>
+            </ul>
+        </div>
+
+        <div class="resume-section">
+            <h3 class="section-title">Work Experience</h3>
+            <p>{{ profile_user.previous_work|linebreaks }}</p>
+        </div>
+
+        <div class="resume-section">
+            <h3 class="section-title">Skills</h3>
+            <p>{{ profile_user.skills|linebreaks }}</p>
+        </div>
+    </div>
+</body>
+</html>
